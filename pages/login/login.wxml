@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="content">
+        <image src="/images/logo.png" class="logo"></image>
+        <text>董氏家谱小程序</text>
+        <button bindtap="identityLogin">董氏认证/登录</button>
+        <button bindtap="touristLogin">游客浏览</button>
+        <button bindtap="adminLogin">管理员登录</button>
+    </view>
+    <dialog style="width: 100%;" showDialog="{{showDialog}}">
+        <text class="title">管理员</text>
+        <view class="input">
+            <text>请输入密码：</text>
+            <input model:value="{{password}}" password="true"/>
+        </view>
+        <view class="footer">
+            <view bindtap="cancel">取消</view>
+            <view class="submit" bindtap="submit">登录</view>
+        </view>
+    </dialog>
+</view>

@@ -1,0 +1,16 @@
+<scroll-view scroll-y="true">
+    <view class="container">
+        <block wx:for="{{ancestor}}" wx:for-index="index">
+            <view class="item">
+                <view class="man">
+                    <image src="{{item.image}}" mode="scaleToFill"></image>
+                    <text class="name" bindtap="goDetail" data-id="{{item._id}}">{{item.name}}</text>
+                </view>
+                <view class="hornor">
+                    <text>祭扫：{{item.number}}</text>
+                    <button size="mini" bindtap="hornor" data-index="{{index}}">祭扫</button>
+                </view>
+            </view>
+        </block>
+    </view>
+</scroll-view>    

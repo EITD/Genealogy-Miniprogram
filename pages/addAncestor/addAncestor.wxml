@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="title">添加先祖</view>
+    <view class="item">
+        <text class="required">姓名：</text>
+        <input model:value="{{name}}"/>
+    </view>
+    <view class="item">
+        <button class="required" size="mini" bindtap="upload">上传图片</button>
+        <text wx:if="{{img}}" style="margin-left: 30rpx;">已上传</text>
+    </view>
+    <view class="item">
+        <text class="required">描述：</text>
+        <textarea model:value="{{description}}"></textarea>
+    </view>
+    <text wx:if="{{error}}" class="error">{{errorMsg}}</text>
+    <button bindtap="submit" style="margin-top: 60rpx;">提交</button>
+</view>

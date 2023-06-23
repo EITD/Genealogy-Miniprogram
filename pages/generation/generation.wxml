@@ -1,0 +1,35 @@
+<view class='container'>
+    <image src="/images/nowbg.jpg" class='background'></image>
+    <scroll-view scroll-y="true" class='content'>
+            <image src="/images/header.png" class='header'></image>
+            <view class="search">
+                <input model:value="{{input}}" placeholder="如：和畅"/>
+                <button size="mini" bindtap="search">宗亲搜索</button>
+            </view>
+            <view class="generation">
+                <text class="item" bindlongpress="showDetail" data-item="{{parent}}">{{parent.name}}</text>
+                <image src="/images/include.png" wx:if="{{multichild}}" class="multiple"></image>
+                <image src="/images/arrow.png" wx:else class="single"></image>
+                <view class="{{multichild ? 'multiChildren' : 'singleChild'}}">
+                    <block wx:for="{{children}}">
+                        <view class="item" bindtap="chooseGraph" bindlongpress="showDetail" data-item="{{item}}">{{item.name}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="switch">
+                <button bindtap="chooseUp">向上</button>
+                <button bindtap="chooseRoot">鼻祖</button>
+            </view>
+            <image src="/images/footer.png" class='footer'></image>
+    </scroll-view>
+    <dialog style="width: 100%;" showDialog="{{showDialog}}">
+        <table wx:if="{{showTable}}" table="{{table}}" bind:choose="chooseSearch"></table>
+        <text wx:else class="noResult">抱歉，没有查询到信息！</text>
+    </dialog>
+    <dialog style="width: 100%; height: 100%;" showDialog="{{showDetail}}">
+        <text class="title">{{item.name}}</text>
+        <text>{{item.courtesy}}</text>
+        <text style="margin: 20rpx;">第{{item.generation}}世</text>
+        <text>{{item.description}}</text>
+    </dialog>
+</view>

@@ -1,0 +1,9 @@
+<scroll-view scroll-y="true" class="container" wx:if="{{showDialog}}">
+    <view class="mask"></view>
+    <view class="content">
+        <view class="dialog">
+            <view class="close" bindtap="closeDialog">X</view>
+            <slot></slot>
+        </view>
+    </view>
+</scroll-view>

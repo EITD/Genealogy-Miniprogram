@@ -1,0 +1,14 @@
+<view class="table">
+    <view class="tr">
+        <view class="th">世代</view>
+        <view class="th">姓名</view>
+        <view class="th">字号</view>
+    </view>
+    <block wx:for="{{table}}">
+        <view class="tr">
+            <view class="td">{{item.generation}}</view>
+            <view class="td" bindtap="choose" data-item="{{item}}">{{item.name}}</view>
+            <view class="td">{{item.courtesy}}</view>
+        </view>
+    </block>
+</view>

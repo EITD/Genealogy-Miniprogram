@@ -1,0 +1,15 @@
+<view class="book">
+  <view class="main" bindtouchstart="touchStart" bindtouchmove="touchMove">
+    <view class="pages">
+      <block wx:for="{{pages}}" wx:key="item">
+      <!-- nextList翻过去的效果，prevList翻回来的效果，每一页保持一种状态 -->
+        <image class="page {{nextList[index]}} {{prevList[index]}}" style="z-index:{{pages.length - index}}" src="{{item.imgurl}}">
+        </image>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="download">
+  <text bindtap="download">导出</text>
+</view>

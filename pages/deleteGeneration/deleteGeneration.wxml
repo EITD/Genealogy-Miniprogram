@@ -1,0 +1,27 @@
+<scroll-view scroll-y="true">
+    <view class="container">
+        <view class="title">删除族人</view>
+        <view class="item">
+            <text class="required">被删除人：</text>
+            <input wx:if="{{!confirm}}" model:value="{{name}}"/>
+            <button wx:if="{{!confirm}}" size="mini" bindtap="search">查询</button>
+            <text wx:if="{{confirm}}">{{name}}</text>
+            <button  wx:if="{{confirm}}" size="mini" bindtap="change">更改</button>
+        </view>
+        <table wx:if="{{showTable}}" table="{{table}}" bind:choose="chooseDelete"></table>
+        <view class="item">
+            <text style="margin-left: 20rpx;">字号：</text>
+            <text>{{courtesy}}</text>
+        </view>
+        <view class="col">
+            <text style="margin-left: 20rpx;">描述：</text>
+            <text style="margin-top: 30rpx; margin-left: 20rpx;">{{description}}</text>
+        </view>
+        <view class="item">
+            <text style="margin-left: 20rpx;">父辈：</text>
+            <text>{{parent}}</text>
+        </view>
+        <text wx:if="{{error}}" class="error">{{errorMsg}}</text>
+        <button bindtap="submit" style="margin-top: 60rpx;">提交</button>
+    </view>
+</scroll-view>

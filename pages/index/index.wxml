@@ -1,0 +1,45 @@
+<view class="container">
+    <view class="content">
+        <swiper indicator-dots="true" indicator-color="#c4ac89" indicator-active-color="#a3691a" autoplay="true" interval="5000" duration="1000" circular="true">
+            <block wx:for="{{banner}}">
+                <swiper-item>
+                    <image src="{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="title">个人中心</view>
+        <text class="welcome">欢迎您！{{user}}</text>
+        <view class="row">
+            <view class="column">
+                <view class="function" bindtap="ebook">家谱电子书</view>
+                <view class="divLine"></view>
+            </view>
+            <view  wx:if="{{isAdmin}}" class="column">
+                <view class="function" bindtap="addBook">添加电子书页</view>
+                <view class="divLine"></view>
+            </view>
+        </view>
+        <view class="row" wx:if="{{isAdmin}}">
+            <view class="column">
+                <view class="function" bindtap="manageGeneration">管理族人</view>
+                <view class="divLine"></view>
+            </view>
+            <view class="column">
+                <view class="function" bindtap="manageAncestor">管理先祖</view>
+                <view class="divLine"></view>
+            </view>
+        </view>
+        <view class="function" bindtap="logout">退出</view>
+        <view class="divLine"></view>
+    </view>
+    <dialog showDialog="{{showAncestor}}">
+        <text class="item" bindtap="addAncestor">添加先祖</text>
+        <text class="item" bindtap="editAncestor">修改先祖</text>
+        <text class="item" bindtap="deleteAncestor">删除先祖</text>
+    </dialog>
+    <dialog showDialog="{{showGeneration}}">
+        <text class="item" bindtap="addGeneration">添加族人</text>
+        <text class="item" bindtap="editGeneration">修改族人</text>
+        <text class="item" bindtap="deleteGeneration">删除族人</text>
+    </dialog>
+</view>

@@ -1,0 +1,35 @@
+<scroll-view scroll-y="true">
+    <view class="container">
+        <view class="title">修改族人</view>
+        <view class="item">
+            <text class="required">被修改人：</text>
+            <input wx:if="{{!confirmEdit}}" model:value="{{edit}}"/>
+            <button wx:if="{{!confirmEdit}}" size="mini" bindtap="searchEdit">查询</button>
+            <text wx:if="{{confirmEdit}}">{{edit}}</text>
+            <button  wx:if="{{confirmEdit}}" size="mini" bindtap="changeEdit">更改</button>
+        </view>
+        <table wx:if="{{showEditTable}}" table="{{editTable}}" bind:choose="chooseEdit"></table>
+        <view class="item">
+            <text class="required">姓名：</text>
+            <input model:value="{{name}}"/>
+        </view>
+        <view class="item">
+            <text style="margin-left: 20rpx;">字号：</text>
+            <input model:value="{{courtesy}}"/>
+        </view>
+        <view class="item">
+            <text style="margin-left: 20rpx;">描述：</text>
+            <textarea model:value="{{description}}"></textarea>
+        </view>
+        <view class="item">
+            <text class="required">父辈：</text>
+            <input wx:if="{{!confirmParent}}" model:value="{{parent}}"/>
+            <button wx:if="{{!confirmParent}}" size="mini" bindtap="searchParent">查询</button>
+            <text wx:if="{{confirmParent}}">{{parent}}</text>
+            <button  wx:if="{{confirmParent}}" size="mini" bindtap="changeParent">更改</button>
+        </view>
+        <table wx:if="{{showParentTable}}" table="{{parentTable}}" bind:choose="chooseParent"></table>
+        <text wx:if="{{error}}" class="error">{{errorMsg}}</text>
+        <button bindtap="submit" style="margin-top: 60rpx;">提交</button>
+    </view>
+</scroll-view>

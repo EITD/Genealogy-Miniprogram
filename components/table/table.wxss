@@ -1,0 +1,36 @@
+.table {
+    width: 500rpx;
+    margin-top: 50rpx;
+    margin-bottom: 20rpx;
+    border: 1rpx solid #772f1f;
+}
+
+.tr {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+}
+
+.th {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+    border: 1rpx solid #772f1f;
+    color: #772f1f;
+    font-weight: 600;
+}
+
+.td {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+    border: 1rpx solid #772f1f;
+    color: #772f1f;
+}

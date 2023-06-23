@@ -1,0 +1,10 @@
+<view class="container">
+    <ocr-navigator bind:onSuccess="identify" certificateType="idCard" opposite="{{false}}">
+      <button>身份证正面识别(头像面)</button>
+    </ocr-navigator>
+    <image wx:if="{{name}}" src="{{imgurl}}"></image>
+    <text wx:if="{{name}}">姓名：{{name}}</text>
+    <button  wx:if="{{name}}" bindtap="login">确认身份</button>
+    <text wx:if="{{warn}}">非董氏成员，请使用游客登录！</text>
+    <button bindtap="back" wx:if="{{warn}}">返回</button>
+</view>

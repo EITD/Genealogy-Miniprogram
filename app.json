@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/identity/identity",
+    "pages/index/index",
+    "pages/ebook/ebook",
+    "pages/webview/webview",
+    "pages/addGeneration/addGeneration",
+    "pages/editGeneration/editGeneration",
+    "pages/deleteGeneration/deleteGeneration",
+    "pages/addAncestor/addAncestor",
+    "pages/editAncestor/editAncestor",
+    "pages/deleteAncestor/deleteAncestor",
+    "pages/generation/generation",
+    "pages/ancestor/ancestor",
+    "pages/detail/detail",
+    "pages/community/community"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#732a1b",
+    "navigationBarTitleText": "董氏家谱",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#f0d6a1",
+    "backgroundColor": "#732a1b",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home.png"
+    }, {
+      "pagePath": "pages/generation/generation",
+      "text": "宗谱查询",
+      "iconPath": "images/generation.png",
+      "selectedIconPath": "images/generation.png"
+    }, {
+      "pagePath": "pages/ancestor/ancestor",
+      "text": "祭扫先祖",
+      "iconPath": "images/ancestor.png",
+      "selectedIconPath": "images/ancestor.png"
+    }, {
+      "pagePath": "pages/community/community",
+      "text": "交流天地",
+      "iconPath": "images/community.png",
+      "selectedIconPath": "images/community.png"
+    }]
+  },
+  "plugins": {
+    "ocr-plugin": {
+      "version": "3.1.5",
+      "provider": "wx4418e3e031e551be"
+    }
+ }
+}

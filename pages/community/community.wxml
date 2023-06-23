@@ -1,0 +1,28 @@
+<view class="container">
+    <scroll-view scroll-y="true" refresher-enabled="true" bindrefresherrefresh="pullRefresh" refresher-triggered="{{refresh}}">
+        <view class="item" wx:for="{{list}}" wx:key="item">
+            <text class="name">{{item.name}}</text>
+            <text class="time">发表时间：{{item.time}}</text>
+            <text class="content">{{item.content}}</text>
+            <text wx:if="{{item.comment.length > 0}}" class="sub">评论：</text>
+            <view wx:for="{{item.comment}}" wx:for-item="comment" wx:key="comment">
+                <text>{{comment.name}}：</text>
+                <text>{{comment.content}}</text>
+                <view class="time">{{comment.time}}</view>
+            </view>
+            <button size="mini" class="comment" bindtap="comment" data-item="{{item}}">评论</button>
+            <view class="divLine"></view>
+        </view>
+        <view class="loading" hidden="{{!loadMore}}">正在载入更多...</view>
+        <view class="loading" hidden="{{!loadAll}}">已加载全部</view>
+    </scroll-view>
+    <view class="round" bindtap="showModal" bindtouchstart="buttonStart" bindtouchmove="buttonMove" style="top: {{buttonTop}}px; left: {{buttonLeft}}px;">发布</view>
+    <dialog style="width: 100%;" showDialog="{{showModal}}">
+            <text>请输入内容</text>
+            <textarea model:value="{{input}}"></textarea>
+            <view class="footer">
+                <view bindtap="cancel">取消</view>
+                <view class="submit" bindtap="submit">提交</view>
+            </view>
+    </dialog>
+</view>
